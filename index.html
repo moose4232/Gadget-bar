@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadgetbar - Trusted Gadgets, Happy Customers</title>
+    
+    <!-- Tailwind CSS is loaded from the internet. You must be online. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts are loaded from the internet. You must be online. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons are loaded from the internet. You must be online. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS is now embedded inside the HTML -->
+    <style>
+        /* Custom styles for Gadgetbar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Light Gray/White background like Giztop */
+            color: #111827; /* Dark text */
+        }
+
+        .header {
+            background-color: #111827; /* Dark header like Giztop */
+        }
+
+        .cta-button {
+            background-color: #F97316; /* Bright Orange from logo */
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #EA580C; /* Darker Orange on hover */
+        }
+
+        .product-card, .promo-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover, .promo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* CAROUSEL STYLES */
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* This enables the sliding animation */
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            flex-shrink: 0; /* Prevents items from shrinking */
+        }
+
+        .carousel-dot.active-dot {
+            background-color: #F97316; /* Orange for active dot */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 1. Header Section -->
+    <header class="header shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#">
+                        <img src="Images/gadget-bar-logo.png" alt="Gadgetbar Logo" class="h-16 w-auto" onerror="this.onerror=null; this.src='https://placehold.co/150x50/111827/FFFFFF?text=Gadgetbar';">
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-6 items-center">
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Smartphones</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Smartwatches</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Audio</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Accessories</a>
+                    <a href="#" class="text-orange-500 font-bold hover:text-orange-400 transition-colors duration-300">🔥 Hot Deals</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden lg:block relative">
+                        <input type="text" placeholder="Search for products..." class="bg-gray-800 border border-gray-700 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:border-blue-500 w-64 text-white">
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-3">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fas fa-user text-xl"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white relative">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Welcome Section -->
+        <section class="text-center py-12 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold text-gray-800">WELCOME TO GADGETBAR!</h1>
+                <p class="mt-2 text-gray-600">Your trusted source for smartphones, tablets, and smart gadgets in Bangladesh.</p>
+                <p class="text-gray-600">"Trusted Gadgets. Happy customers."</p>
+            </div>
+        </section>
+
+        <!-- 3. Main Promotional Blocks -->
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg overflow-hidden promo-card border">
+                     <a href="#"><img src="Images/vivo-x-fold3-pro-mobile.jpg.webp" alt="Vivo X Fold3 Pro Smartphone" class="w-full h-full object-cover"></a>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden promo-card border">
+                     <a href="#"><img src="Images/Redmi 15.webp" alt="Redmi 15 Smartphone" class="w-full h-full object-cover"></a>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden promo-card border">
+                     <a href="#"><img src="Images/infinix-gt30-pro-1.jpg" alt="Infinix GT30 Pro Gaming Phone" class="w-full h-full object-cover"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Trust Bar -->
+        <section class="bg-gray-100 border-t border-b">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center py-6">
+                    <div class="flex items-center justify-center space-x-3"><i class="fas fa-check-circle text-teal-500 text-2xl"></i><span class="font-semibold text-gray-700">Authentic Products</span></div>
+                    <div class="flex items-center justify-center space-x-3"><i class="fas fa-shield-alt text-teal-500 text-2xl"></i><span class="font-semibold text-gray-700">Official Warranty</span></div>
+                    <div class="flex items-center justify-center space-x-3"><i class="fas fa-truck-fast text-teal-500 text-2xl"></i><span class="font-semibold text-gray-700">Fast Delivery in BD</span></div>
+                    <div class="flex items-center justify-center space-x-3"><i class="fas fa-undo text-teal-500 text-2xl"></i><span class="font-semibold text-gray-700">7-Day Easy Returns</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Featured Products Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">This Week's Top Picks</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Product Cards -->
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="Images/samsung-s24-ultra.webp" alt="Samsung Galaxy S24 Ultra" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Samsung Galaxy S24 Ultra</a></h3><p class="text-sm text-gray-500 mb-2">The ultimate AI phone with a stunning 200MP camera and built-in S Pen.</p><p class="text-xl font-bold text-teal-600 mb-4">৳105,000 <span class="text-sm font-normal text-gray-500">(Unofficial)</span></p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="Images/xiaomi-15-ultra.jpg" alt="Xiaomi 15 Ultra" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Xiaomi 15 Ultra</a></h3><p class="text-sm text-gray-500 mb-2">Next-gen Snapdragon 8 Elite power with an advanced Leica quad-camera system.</p><p class="text-xl font-bold text-teal-600 mb-4">৳160,000 <span class="text-sm font-normal text-gray-500">(Expected)</span></p><button class="w-full bg-gray-400 cursor-not-allowed text-white font-bold py-2 rounded-lg mt-auto">Coming Soon</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="Images/oneplus-13.png" alt="OnePlus 13" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">OnePlus 13</a></h3><p class="text-sm text-gray-500 mb-2">Flagship performance with Hasselblad cameras and a massive 6000mAh battery.</p><p class="text-xl font-bold text-teal-600 mb-4">৳118,000 <span class="text-sm font-normal text-gray-500">(Expected)</span></p><button class="w-full bg-gray-400 cursor-not-allowed text-white font-bold py-2 rounded-lg mt-auto">Coming Soon</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="Images/pixel-9-pro.jpg" alt="Google Pixel 9 Pro" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Google Pixel 9 Pro</a></h3><p class="text-sm text-gray-500 mb-2">The pinnacle of AI-powered photography with the new Tensor G4 chip.</p><p class="text-xl font-bold text-teal-600 mb-4">৳91,500 <span class="text-sm font-normal text-gray-500">(Expected)</span></p><button class="w-full bg-gray-400 cursor-not-allowed text-white font-bold py-2 rounded-lg mt-auto">Coming Soon</button></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Seller & Best Deals Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="bg-orange-500 rounded-lg overflow-hidden promo-card relative h-full flex items-center justify-center p-2"><a href="#" class="block w-full h-full"><img src="Images/Best Deal.jpg" alt="CMF Phone 2 Pro" class="w-full h-full object-contain"></a></div>
+                    <div>
+                        <div class="flex justify-between items-center border-b pb-2 mb-4">
+                            <h2 class="text-2xl font-bold text-gray-800">BEST DEALS</h2>
+                            <div><button class="p-2 bg-gray-200 hover:bg-gray-300 rounded-md"><i class="fas fa-chevron-left"></i></button><button class="p-2 bg-gray-200 hover:bg-gray-300 rounded-md ml-2"><i class="fas fa-chevron-right"></i></button></div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="Images/xiaomi-redmi-note-14-8gb-256gb_(1)54.jpeg" alt="Xiaomi Redmi Note 14" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">Xiaomi Redmi Note 14</h4><p class="text-teal-600 font-bold">৳28,000</p></div>
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="Images/redmi-turbo-4-pro-black.jpg" alt="Redmi Turbo 4 Pro" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">Redmi Turbo 4 Pro</h4><p class="text-teal-600 font-bold">৳40,000</p></div>
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="Images/oneplus_13t.jpg" alt="OnePlus 13T" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">OnePlus 13T</h4><p class="text-teal-600 font-bold">৳75,000</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEPARATOR BANNER CAROUSEL -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="banner-carousel" class="relative rounded-lg overflow-hidden promo-card">
+                    <div class="carousel-slides flex h-56 md:h-80"><div class="carousel-item flex-shrink-0 w-full"><img src="Images/banner-1.jpg" alt="Audio Gadgets Banner" class="w-full h-full object-cover"></div><div class="carousel-item flex-shrink-0 w-full"><img src="Images/banner-2.webp" alt="Cristales Earphones Banner" class="w-full h-full object-cover"></div><div class="carousel-item flex-shrink-0 w-full"><img src="Images/Banner-3.webp" alt="Simgot Earphones Banner" class="w-full h-full object-cover"></div><div class="carousel-item flex-shrink-0 w-full"><img src="Images/banner-4.jpg" alt="Hi-Res Audio Player Banner" class="w-full h-full object-cover"></div></div>
+                    <button id="prevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"><i class="fas fa-chevron-right"></i></button>
+                    <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- AUDIO SECTION START -->
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg overflow-hidden promo-card border"><a href="#"><img src="https://placehold.co/800x800/262626/FFFFFF?text=Headphones" alt="Headphones Promotion" class="w-full h-full object-cover"></a></div>
+                <div class="bg-white rounded-lg overflow-hidden promo-card border"><a href="#"><img src="https://placehold.co/800x800/0284C7/FFFFFF?text=TWS+Earbuds" alt="TWS Earbuds Promotion" class="w-full h-full object-cover"></a></div>
+                <div class="bg-white rounded-lg overflow-hidden promo-card border"><a href="#"><img src="https://placehold.co/800x800/BE185D/FFFFFF?text=Speakers" alt="Speakers Promotion" class="w-full h-full object-cover"></a></div>
+            </div>
+        </section>
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Premium Audio Selection</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=Sony+XM5" alt="Sony WH-1000XM5 Headphones" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Sony WH-1000XM5</a></h3><p class="text-sm text-gray-500 mb-2">Industry-leading noise cancellation.</p><p class="text-xl font-bold text-teal-600 mb-4">৳38,000</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=AirPods+Pro" alt="Apple AirPods Pro 2" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Apple AirPods Pro (2nd Gen)</a></h3><p class="text-sm text-gray-500 mb-2">Adaptive Audio and richer sound.</p><p class="text-xl font-bold text-teal-600 mb-4">৳25,500</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=Anker+Soundcore" alt="Anker Soundcore Liberty 4 NC" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Anker Soundcore Liberty 4 NC</a></h3><p class="text-sm text-gray-500 mb-2">Hi-Res wireless audio with ANC.</p><p class="text-xl font-bold text-teal-600 mb-4">৳9,500</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=JBL+Flip+6" alt="JBL Flip 6" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">JBL Flip 6 Speaker</a></h3><p class="text-sm text-gray-500 mb-2">Portable, waterproof, party-ready.</p><p class="text-xl font-bold text-teal-600 mb-4">৳12,000</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="bg-blue-800 rounded-lg overflow-hidden promo-card relative h-full flex items-center justify-center p-2"><a href="#" class="block w-full h-full"><img src="https://placehold.co/600x600/1E40AF/FFFFFF?text=Top+Selling+Headphones" alt="Top Selling Headphones" class="w-full h-full object-contain"></a></div>
+                    <div>
+                        <div class="flex justify-between items-center border-b pb-2 mb-4">
+                            <h2 class="text-2xl font-bold text-gray-800">AUDIO BEST DEALS</h2>
+                            <div><button class="p-2 bg-gray-200 hover:bg-gray-300 rounded-md"><i class="fas fa-chevron-left"></i></button><button class="p-2 bg-gray-200 hover:bg-gray-300 rounded-md ml-2"><i class="fas fa-chevron-right"></i></button></div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="https://placehold.co/200x200/f1f5f9/475569?text=Edifier+TWS" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">Edifier TWS1 Pro</h4><p class="text-teal-600 font-bold">৳4,500</p></div>
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="https://placehold.co/200x200/f1f5f9/475569?text=Haylou+GT7" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">Haylou GT7 Neo</h4><p class="text-teal-600 font-bold">৳2,200</p></div>
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="https://placehold.co/200x200/f1f5f9/475569?text=QCY+T13" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">QCY T13 ANC</h4><p class="text-teal-600 font-bold">৳2,800</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- AUDIO SECTION END -->
+        
+        <!-- SEPARATOR BANNER CAROUSEL -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="banner-carousel-2" class="relative rounded-lg overflow-hidden promo-card">
+                    <div class="carousel-slides flex h-56 md:h-80"><div class="carousel-item flex-shrink-0 w-full"><img src="https://placehold.co/1200x400/000000/FFFFFF?text=Apple+Watch+Ultra" alt="Apple Watch Banner" class="w-full h-full object-cover"></div><div class="carousel-item flex-shrink-0 w-full"><img src="https://placehold.co/1200x400/1E40AF/FFFFFF?text=Galaxy+Watch+7" alt="Galaxy Watch Banner" class="w-full h-full object-cover"></div></div>
+                    <button id="prevBtn2" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextBtn2" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"><i class="fas fa-chevron-right"></i></button>
+                    <div id="carousel-dots2" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SMARTWATCH SECTION START -->
+        
+        <!-- Smartwatch Promotional Blocks -->
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg overflow-hidden promo-card border"><a href="#"><img src="https://placehold.co/800x800/000000/FFFFFF?text=Apple+Watch" alt="Apple Watch Promotion" class="w-full h-full object-cover"></a></div>
+                <div class="bg-white rounded-lg overflow-hidden promo-card border"><a href="#"><img src="https://placehold.co/800x800/1E40AF/FFFFFF?text=Galaxy+Watch" alt="Galaxy Watch Promotion" class="w-full h-full object-cover"></a></div>
+                <div class="bg-white rounded-lg overflow-hidden promo-card border"><a href="#"><img src="https://placehold.co/800x800/16A34A/FFFFFF?text=Fitness+Trackers" alt="Fitness Trackers Promotion" class="w-full h-full object-cover"></a></div>
+            </div>
+        </section>
+        
+        <!-- Featured Smartwatch Products -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Top Smartwatches</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=Apple+Watch+10" alt="Apple Watch Series 10" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Apple Watch Series 10</a></h3><p class="text-sm text-gray-500 mb-2">Smarter, brighter, and more powerful.</p><p class="text-xl font-bold text-teal-600 mb-4">৳55,000</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=Galaxy+Watch+7" alt="Samsung Galaxy Watch 7" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Samsung Galaxy Watch 7</a></h3><p class="text-sm text-gray-500 mb-2">Advanced health monitoring on your wrist.</p><p class="text-xl font-bold text-teal-600 mb-4">৳45,000</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=Amazfit+GTR+5" alt="Amazfit GTR 5" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Amazfit GTR 5</a></h3><p class="text-sm text-gray-500 mb-2">Long battery life with a classic design.</p><p class="text-xl font-bold text-teal-600 mb-4">৳18,500</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=Xiaomi+Watch+S4" alt="Xiaomi Watch S4" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Xiaomi Watch S4</a></h3><p class="text-sm text-gray-500 mb-2">Premium features at an amazing value.</p><p class="text-xl font-bold text-teal-600 mb-4">৳15,000</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Seller & Best Deals For Smartwatches -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="bg-gray-800 rounded-lg overflow-hidden promo-card relative h-full flex items-center justify-center p-2"><a href="#" class="block w-full h-full"><img src="https://placehold.co/600x600/1F2937/FFFFFF?text=Top+Selling+Watch" alt="Top Selling Watch" class="w-full h-full object-contain"></a></div>
+                    <div>
+                        <div class="flex justify-between items-center border-b pb-2 mb-4">
+                            <h2 class="text-2xl font-bold text-gray-800">WATCH BEST DEALS</h2>
+                            <div><button class="p-2 bg-gray-200 hover:bg-gray-300 rounded-md"><i class="fas fa-chevron-left"></i></button><button class="p-2 bg-gray-200 hover:bg-gray-300 rounded-md ml-2"><i class="fas fa-chevron-right"></i></button></div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="https://placehold.co/200x200/f1f5f9/475569?text=CMF+Watch+Pro" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">CMF Watch Pro</h4><p class="text-teal-600 font-bold">৳6,500</p></div>
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="https://placehold.co/200x200/f1f5f9/475569?text=Haylou+Solar" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">Haylou Solar Pro</h4><p class="text-teal-600 font-bold">৳4,800</p></div>
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="https://placehold.co/200x200/f1f5f9/475569?text=Redmi+Watch+4" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">Redmi Watch 4</h4><p class="text-teal-600 font-bold">৳8,500</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SMARTWATCH SECTION END -->
+
+        <!-- SEPARATOR BANNER CAROUSEL -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="banner-carousel-3" class="relative rounded-lg overflow-hidden promo-card">
+                    <div class="carousel-slides flex h-56 md:h-80"><div class="carousel-item flex-shrink-0 w-full"><img src="https://placehold.co/1200x400/DC2626/FFFFFF?text=CHARGERS" alt="Chargers Banner" class="w-full h-full object-cover"></div><div class="carousel-item flex-shrink-0 w-full"><img src="https://placehold.co/1200x400/65A30D/FFFFFF?text=CASES" alt="Cases Banner" class="w-full h-full object-cover"></div></div>
+                    <button id="prevBtn3" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextBtn3" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"><i class="fas fa-chevron-right"></i></button>
+                    <div id="carousel-dots3" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACCESSORIES SECTION START -->
+        
+        <!-- Accessories Promotional Blocks -->
+        <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg overflow-hidden promo-card border"><a href="#"><img src="https://placehold.co/800x800/7C3AED/FFFFFF?text=Power+Banks" alt="Power Banks Promotion" class="w-full h-full object-cover"></a></div>
+                <div class="bg-white rounded-lg overflow-hidden promo-card border"><a href="#"><img src="https://placehold.co/800x800/E11D48/FFFFFF?text=Cables" alt="Cables Promotion" class="w-full h-full object-cover"></a></div>
+                <div class="bg-white rounded-lg overflow-hidden promo-card border"><a href="#"><img src="https://placehold.co/800x800/059669/FFFFFF?text=Protectors" alt="Screen Protectors Promotion" class="w-full h-full object-cover"></a></div>
+            </div>
+        </section>
+        
+        <!-- Featured Accessories Products -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Essential Accessories</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=Anker+Charger" alt="Anker 65W Charger" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Anker 735 Charger (GaNPrime 65W)</a></h3><p class="text-sm text-gray-500 mb-2">Charge 3 devices at once.</p><p class="text-xl font-bold text-teal-600 mb-4">৳5,500</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=Ugreen+Cable" alt="Ugreen USB-C Cable" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Ugreen USB-C to C Cable 100W</a></h3><p class="text-sm text-gray-500 mb-2">Fast charging for laptops & phones.</p><p class="text-xl font-bold text-teal-600 mb-4">৳1,200</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=Spigen+Case" alt="Spigen Case" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Spigen Ultra Hybrid Case</a></h3><p class="text-sm text-gray-500 mb-2">Crystal clear, long-lasting protection.</p><p class="text-xl font-bold text-teal-600 mb-4">৳2,500</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                    <div class="bg-white rounded-lg overflow-hidden product-card border flex flex-col"><a href="#" class="block"><img src="https://placehold.co/400x400/f1f5f9/475569?text=Anker+Power+Bank" alt="Anker Power Bank" class="w-full h-56 object-cover"></a><div class="p-4 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800 flex-grow"><a href="#" class="hover:text-orange-500">Anker PowerCore 20K</a></h3><p class="text-sm text-gray-500 mb-2">High-capacity portable charging.</p><p class="text-xl font-bold text-teal-600 mb-4">৳6,000</p><button class="w-full cta-button font-bold py-2 rounded-lg mt-auto">Add to Cart</button></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Seller & Best Deals For Accessories -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="bg-green-600 rounded-lg overflow-hidden promo-card relative h-full flex items-center justify-center p-2"><a href="#" class="block w-full h-full"><img src="https://placehold.co/600x600/16A34A/FFFFFF?text=Top+Selling+Accessory" alt="Top Selling Accessory" class="w-full h-full object-contain"></a></div>
+                    <div>
+                        <div class="flex justify-between items-center border-b pb-2 mb-4">
+                            <h2 class="text-2xl font-bold text-gray-800">ACCESSORY DEALS</h2>
+                            <div><button class="p-2 bg-gray-200 hover:bg-gray-300 rounded-md"><i class="fas fa-chevron-left"></i></button><button class="p-2 bg-gray-200 hover:bg-gray-300 rounded-md ml-2"><i class="fas fa-chevron-right"></i></button></div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="https://placehold.co/200x200/f1f5f9/475569?text=Baseus+Charger" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">Baseus 20W Charger</h4><p class="text-teal-600 font-bold">৳1,500</p></div>
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="https://placehold.co/200x200/f1f5f9/475569?text=Caseology+Case" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">Caseology Parallax Case</h4><p class="text-teal-600 font-bold">৳2,000</p></div>
+                            <div class="text-center bg-white border rounded-lg p-2 product-card"><a href="#"><img src="https://placehold.co/200x200/f1f5f9/475569?text=ESR+Glass" class="w-full h-32 object-contain"></a><h4 class="font-semibold text-sm mt-2">ESR Screen Protector</h4><p class="text-teal-600 font-bold">৳1,800</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACCESSORIES SECTION END -->
+
+        <!-- 6. Brand Showcase -->
+        <section class="bg-gray-100 py-12">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold text-center text-gray-600 mb-8">We Are An Authorized Seller Of</h2>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                    <img src="https://placehold.co/120x40/FFFFFF/A3A3A3?text=Samsung" alt="Samsung" class="h-8 opacity-70 hover:opacity-100 transition">
+                    <img src="https://placehold.co/120x40/FFFFFF/A3A3A3?text=Xiaomi" alt="Xiaomi" class="h-8 opacity-70 hover:opacity-100 transition">
+                    <img src="https://placehold.co/120x40/FFFFFF/A3A3A3?text=OnePlus" alt="OnePlus" class="h-8 opacity-70 hover:opacity-100 transition">
+                    <img src="https://placehold.co/120x40/FFFFFF/A3A3A3?text=Google" alt="Google" class="h-8 opacity-70 hover:opacity-100 transition">
+                    <img src="https://placehold.co/120x40/FFFFFF/A3A3A3?text=Anker" alt="Anker" class="h-8 opacity-70 hover:opacity-100 transition">
+                    <img src="https://placehold.co/120x40/FFFFFF/A3A3A3?text=Ugreen" alt="Ugreen" class="h-8 opacity-70 hover:opacity-100 transition">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. Footer Section -->
+    <footer class="header text-gray-400">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1: Gadgetbar -->
+                <div>
+                    <a href="#">
+                        <img src="Images/gadget-bar-logo.png" alt="Gadgetbar Logo" class="h-16 w-auto mb-4" onerror="this.onerror=null; this.src='https://placehold.co/150x50/111827/FFFFFF?text=Gadgetbar';">
+                    </a>
+                    <p class="mb-4">Your trusted source for authentic gadgets in Bangladesh.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white">Track Your Order</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Customer Support -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Customer Support</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="hover:text-white">Shipping Policy</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white">Warranty & Returns</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Newsletter -->
+                 <div>
+                    <h4 class="text-white font-bold mb-4">Stay Updated</h4>
+                    <p class="mb-4">Subscribe to our newsletter for the latest deals and new arrivals.</p>
+                    <div class="flex">
+                         <input type="email" placeholder="Your Email" class="bg-gray-800 border border-gray-700 rounded-l-lg py-2 px-4 w-full focus:outline-none focus:border-blue-500 text-white">
+                         <button class="cta-button font-bold py-2 px-4 rounded-r-lg">Subscribe</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2024 Gadgetbar. All Rights Reserved. | Secure Payments by 💳</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript is now embedded inside the HTML -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to initialize a carousel
+            function initCarousel(carouselId) {
+                const carousel = document.querySelector(carouselId);
+                if (!carousel) return;
+
+                const slidesContainer = carousel.querySelector(".carousel-slides");
+                const slides = carousel.querySelectorAll(".carousel-item");
+                const prevBtn = carousel.querySelector("[id^=prevBtn]");
+                const nextBtn = carousel.querySelector("[id^=nextBtn]");
+                const dotsContainer = carousel.querySelector("[id^=carousel-dots]");
+                
+                let currentIndex = 0;
+                let slideInterval;
+
+                if (slides.length === 0) return;
+
+                // Create dots
+                dotsContainer.innerHTML = ''; // Clear existing dots
+                slides.forEach((_, i) => {
+                    const dot = document.createElement("button");
+                    dot.classList.add("carousel-dot", "w-3", "h-3", "bg-gray-400", "rounded-full", "transition");
+                    if (i === 0) dot.classList.add("active-dot");
+                    dot.addEventListener("click", () => goToSlide(i));
+                    dotsContainer.appendChild(dot);
+                });
+                const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+                const updateCarousel = () => {
+                    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle("active-dot", i === currentIndex);
+                    });
+                };
+
+                const goToSlide = (index) => {
+                    currentIndex = index;
+                    updateCarousel();
+                    resetInterval();
+                };
+
+                const resetInterval = () => {
+                    clearInterval(slideInterval);
+                    slideInterval = setInterval(() => {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        updateCarousel();
+                    }, 5000);
+                };
+                
+                prevBtn.addEventListener("click", () => {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    goToSlide(currentIndex);
+                });
+
+                nextBtn.addEventListener("click", () => {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    goToSlide(currentIndex);
+                });
+
+                resetInterval();
+            }
+
+            // Initialize all carousels on the page
+            initCarousel("#banner-carousel");
+            initCarousel("#banner-carousel-2"); 
+            initCarousel("#banner-carousel-3"); 
+        });
+    </script>
+</body>
+</html>

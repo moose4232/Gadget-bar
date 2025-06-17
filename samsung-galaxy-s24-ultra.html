@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Galaxy S24 Ultra - Gadgetbar</title>
+    
+    <!-- Tailwind CSS is loaded from the internet. You must be online. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts are loaded from the internet. You must be online. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons are loaded from the internet. You must be online. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS is now embedded inside the HTML -->
+    <style>
+        /* Custom styles for Gadgetbar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Light Gray/White background */
+            color: #111827; /* Dark text */
+        }
+
+        .header {
+            background-color: #111827; /* Dark header */
+        }
+
+        .cta-button {
+            background-color: #F97316; /* Bright Orange from logo */
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #EA580C; /* Darker Orange on hover */
+        }
+        
+        .spec-table tr:nth-child(even) {
+            background-color: #f3f4f6;
+        }
+        
+        .thumbnail.active-thumbnail {
+            border-color: #F97316;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 1. Header Section (Same as Homepage) -->
+    <header class="header shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <img src="Images/gadget-bar-logo.png" alt="Gadgetbar Logo" class="h-16 w-auto" onerror="this.onerror=null; this.src='https://placehold.co/150x50/111827/FFFFFF?text=Gadgetbar';">
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Home</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Smartphones</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Smartwatches</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Audio</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Accessories</a>
+                    <a href="#" class="text-orange-500 font-bold hover:text-orange-400 transition-colors duration-300">🔥 Hot Deals</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fas fa-user text-xl"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white relative">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+        <!-- Breadcrumb Navigation -->
+        <nav class="text-sm mb-4">
+            <a href="index.html" class="text-gray-500 hover:text-orange-500">Home</a>
+            <span class="mx-2">/</span>
+            <a href="#" class="text-gray-500 hover:text-orange-500">Smartphones</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-800">Samsung Galaxy S24 Ultra</span>
+        </nav>
+
+        <!-- Product Details Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Left Column: Image Gallery -->
+            <div>
+                <div class="bg-white rounded-lg border p-4 mb-4">
+                    <img id="main-product-image" src="Images/samsung-s24-ultra.webp" alt="Samsung Galaxy S24 Ultra" class="w-full h-auto object-contain">
+                </div>
+                <div class="grid grid-cols-4 gap-2" id="thumbnail-gallery">
+                    <img src="Images/samsung-s24-ultra.webp" alt="Thumbnail 1" class="thumbnail w-full h-auto object-cover border-2 rounded-md cursor-pointer active-thumbnail">
+                    <img src="https://placehold.co/100x100/f3f4f6/4b5563?text=S24+Angle+2" alt="Thumbnail 2" class="thumbnail w-full h-auto object-cover border-2 border-transparent rounded-md cursor-pointer hover:border-orange-500">
+                    <img src="https://placehold.co/100x100/f3f4f6/4b5563?text=S24+Angle+3" alt="Thumbnail 3" class="thumbnail w-full h-auto object-cover border-2 border-transparent rounded-md cursor-pointer hover:border-orange-500">
+                    <img src="https://placehold.co/100x100/f3f4f6/4b5563?text=S24+S-Pen" alt="Thumbnail 4" class="thumbnail w-full h-auto object-cover border-2 border-transparent rounded-md cursor-pointer hover:border-orange-500">
+                </div>
+            </div>
+
+            <!-- Right Column: Product Info -->
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900">Samsung Galaxy S24 Ultra</h1>
+                <div class="flex items-center my-3">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#reviews" class="text-sm text-gray-500 ml-2">(125 Reviews)</a>
+                </div>
+                <p class="text-gray-600 mb-4">The ultimate AI phone with a stunning 200MP camera and built-in S Pen. Experience the new era of mobile with Galaxy AI, a titanium frame, and unparalleled performance.</p>
+                
+                <p class="text-3xl font-extrabold text-teal-600 mb-6">৳105,000</p>
+                
+                <!-- Variant Selection -->
+                <div class="mb-6">
+                    <label class="font-bold text-gray-800">Color: Titanium Gray</label>
+                    <div class="flex space-x-2 mt-2">
+                        <button class="w-8 h-8 rounded-full bg-gray-700 border-2 border-orange-500"></button>
+                        <button class="w-8 h-8 rounded-full bg-black border-2 border-transparent hover:border-orange-500"></button>
+                        <button class="w-8 h-8 rounded-full bg-violet-800 border-2 border-transparent hover:border-orange-500"></button>
+                        <button class="w-8 h-8 rounded-full bg-yellow-400 border-2 border-transparent hover:border-orange-500"></button>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="font-bold text-gray-800">Storage: 256GB</label>
+                    <div class="flex space-x-2 mt-2">
+                        <button class="py-2 px-4 border rounded-lg bg-orange-500 text-white font-semibold">256GB</button>
+                        <button class="py-2 px-4 border rounded-lg hover:border-orange-500">512GB</button>
+                        <button class="py-2 px-4 border rounded-lg hover:border-orange-500">1TB</button>
+                    </div>
+                </div>
+
+                <!-- Quantity and Add to Cart -->
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="flex items-center border rounded-lg">
+                        <button class="px-3 py-2 text-lg font-bold">-</button>
+                        <input type="text" value="1" class="w-12 text-center font-bold">
+                        <button class="px-3 py-2 text-lg font-bold">+</button>
+                    </div>
+                    <button class="w-full cta-button font-bold py-3 rounded-lg flex-grow">Add to Cart</button>
+                </div>
+                <button class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-lg">Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Description, Specs, Reviews Tabs -->
+        <div class="mt-16">
+            <div class="border-b border-gray-200">
+                <nav class="flex space-x-8" id="product-tabs">
+                    <button data-tab="description" class="tab-btn py-4 px-1 text-lg font-medium text-orange-600 border-b-2 border-orange-600">Description</button>
+                    <button data-tab="specs" class="tab-btn py-4 px-1 text-lg font-medium text-gray-500 hover:text-gray-700">Specifications</button>
+                    <button data-tab="reviews" class="tab-btn py-4 px-1 text-lg font-medium text-gray-500 hover:text-gray-700">Reviews</button>
+                </nav>
+            </div>
+            <div class="py-8">
+                <!-- Description Content -->
+                <div id="description" class="tab-content">
+                    <h3 class="font-bold text-xl mb-4">Sleek. Strong. Stunning.</h3>
+                    <p class="text-gray-600 mb-4">Check out the upgrade — a durable shield of titanium built right into the frame. The strength of titanium is now at your fingertips. The legacy of Galaxy Note is alive and well. Write, tap and navigate with the precision your fingers wish they had on the new, flat display.</p>
+                    <h3 class="font-bold text-xl mb-4">200MP. Capture details that rival reality</h3>
+                    <p class="text-gray-600">With the most megapixels on a smartphone and AI processing, Galaxy S24 Ultra sets the industry standard for image quality every time you hit the shutter. What's more, the new ProVisual engine recognizes objects — improving color tone, reducing noise and bringing out detail.</p>
+                </div>
+                <!-- Specifications Content -->
+                <div id="specs" class="tab-content hidden">
+                    <table class="w-full text-left spec-table">
+                        <tbody>
+                            <tr class="border-b"><td class="py-2 px-4 font-semibold">Display</td><td class="py-2 px-4">6.8" Dynamic LTPO AMOLED 2X, 120Hz</td></tr>
+                            <tr class="border-b"><td class="py-2 px-4 font-semibold">Processor</td><td class="py-2 px-4">Snapdragon 8 Gen 3 for Galaxy</td></tr>
+                            <tr class="border-b"><td class="py-2 px-4 font-semibold">RAM</td><td class="py-2 px-4">12GB</td></tr>
+                            <tr class="border-b"><td class="py-2 px-4 font-semibold">Storage</td><td class="py-2 px-4">256GB / 512GB / 1TB UFS 4.0</td></tr>
+                            <tr class="border-b"><td class="py-2 px-4 font-semibold">Main Camera</td><td class="py-2 px-4">200MP Wide + 50MP Periscope Telephoto + 10MP Telephoto + 12MP Ultrawide</td></tr>
+                            <tr class="border-b"><td class="py-2 px-4 font-semibold">Selfie Camera</td><td class="py-2 px-4">12MP</td></tr>
+                            <tr class="border-b"><td class="py-2 px-4 font-semibold">Battery</td><td class="py-2 px-4">5000mAh with 45W wired charging</td></tr>
+                            <tr><td class="py-2 px-4 font-semibold">OS</td><td class="py-2 px-4">Android 14, One UI 6.1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Reviews Content -->
+                <div id="reviews" class="tab-content hidden">
+                    <p>Customer reviews will be displayed here.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Section (Same as Homepage) -->
+    <footer class="header text-gray-400 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Footer content remains the same -->
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2024 Gadgetbar. All Rights Reserved. | Secure Payments by 💳</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript for Tabs AND Image Gallery -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Tab functionality
+            const tabs = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(item => {
+                        item.classList.remove('text-orange-600', 'border-orange-600');
+                        item.classList.add('text-gray-500', 'hover:text-gray-700');
+                    });
+                    
+                    tab.classList.add('text-orange-600', 'border-orange-600');
+                    tab.classList.remove('text-gray-500', 'hover:text-gray-700');
+
+                    tabContents.forEach(content => content.classList.add('hidden'));
+
+                    const target = document.getElementById(tab.dataset.tab);
+                    if(target) target.classList.remove('hidden');
+                });
+            });
+
+            // Image Gallery functionality
+            const mainImage = document.getElementById('main-product-image');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    // Update main image source
+                    mainImage.src = this.src;
+
+                    // Update active thumbnail border
+                    thumbnails.forEach(t => t.classList.remove('active-thumbnail', 'border-orange-500'));
+                    this.classList.add('active-thumbnail', 'border-orange-500');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
